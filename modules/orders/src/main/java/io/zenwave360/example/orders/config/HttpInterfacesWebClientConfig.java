@@ -15,8 +15,8 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 public class HttpInterfacesWebClientConfig {
 
     @Bean
-    WebClient webClient() {
-        return WebClient.builder()
+    WebClient webClient(WebClient.Builder builder) {
+        return builder
             .baseUrl("http://localhost:8080/api")
             .filter(ExchangeFilterFunctions.basicAuthentication("user", "password"))
             .build();

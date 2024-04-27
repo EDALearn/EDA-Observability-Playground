@@ -36,7 +36,7 @@ public class DockerComposeInitializer implements ApplicationContextInitializer<C
     private static final int NUMBER_OF_SERVICES = 1;
 
     static String HOST = DockerClientFactory.instance().dockerHostIpAddress();
-    static DockerComposeContainer container = new DockerComposeContainer(new File("src/main/docker/docker-compose.yml"))
+    static DockerComposeContainer container = new DockerComposeContainer(new File("../docker-compose.yml"))
         .withEnv("HOST", HOST)
         .withExposedService("mongodb", 27017, Wait.forListeningPort());
     static boolean isContainerRunning = false;
@@ -74,7 +74,7 @@ public class DockerComposeInitializer implements ApplicationContextInitializer<C
     private boolean isDockerComposeRunningAllServices(int numberOfServices) {
         return Stream.of("docker-compose", "docker-compose.exe").anyMatch(cmd -> {
             try {
-                return readProcessOutputStream(cmd, "-f", "src/main/docker/docker-compose.yml", "ps")
+                return readProcessOutputStream(cmd, "-f", "../docker-compose.yml", "ps")
                     .size() == (numberOfServices + 1);
             }
             catch (IOException | InterruptedException e) {

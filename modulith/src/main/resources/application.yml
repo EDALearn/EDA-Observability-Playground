@@ -5,6 +5,7 @@ logging:
 #    org.apache.kafka: DEBUG
 
 management.endpoints.web.exposure.include: "*"
+management.tracing.sampling.probability: 1.0
 
 spring:
   security:
@@ -30,6 +31,7 @@ spring:
         restaurants_on-order-status-updated;on-kitchen-order-status-updated;
         delivery_on-order-event;delivery_on-order-status-updated;on-delivery-status-updated;
     stream:
+      kafka.binder.enable-observation: true
       bindings:
         ## Customer Module Bindings
         on-customer-event-out-0:

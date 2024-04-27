@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.zenwave360.example.modulith</groupId>
-        <artifactId>zenwave-modulith-playground</artifactId>
+        <groupId>io.zenwave360.example.observability</groupId>
+        <artifactId>zenwave-observability-playground</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
